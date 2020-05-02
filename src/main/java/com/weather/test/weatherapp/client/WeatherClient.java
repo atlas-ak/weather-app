@@ -25,7 +25,6 @@ public class WeatherClient {
 	@Autowired
 	private Environment env;
 	public Object getWeatherReport(String city) {
-		//String url="http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=1a18f844e08bca392ae5abab8fa72b0d";
 		String url="http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+env.getProperty("weather.report.appId");
 		logger.info("property from application property file "+appId);
 		logger.info("property from application property file via environment api "+appId);
