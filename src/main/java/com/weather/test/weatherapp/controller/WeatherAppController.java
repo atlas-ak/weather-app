@@ -14,7 +14,12 @@ public class WeatherAppController {
 	Logger logger = LoggerFactory.getLogger(WeatherAppController.class);
 	@Autowired
 	WeatherService weatherService;
-	
+	@GetMapping("/")
+	public Object getWeatherForCity() {
+		String city="London";
+		logger.info("weather app controller for city "+city);
+		return weatherService.getWeatherReportForCity(city);
+	}
 	@GetMapping("/weather")
 	public Object getWeatherForCity(@RequestParam ("city") String city) {
 		logger.info("weather app controller for city "+city);
